@@ -1,23 +1,45 @@
-# Default PAGE object:
-page = PAGE
-page.10 = FLUIDTEMPLATE
-page {
-    10 {
-        file.stdWrap.cObject = CASE
-        file.stdWrap.cObject {
-                key.data = pagelayout
+# DEPENDENCIES
+@import 'EXT:ucph_layout_one_column/Configuration/TypoScript/ContentElement/setup.typoscript'
+# HELPER
+@import 'EXT:ucph_layout_one_column/Configuration/TypoScript/Helper/PageClass.typoscript'
+@import 'EXT:ucph_layout_one_column/Configuration/TypoScript/Helper/EmergencyBanner.typoscript'
 
-                default = TEXT
-                default.value = EXT:ucph_layout_one_column/Resources/Private/Templates/Ucph-one-column.html
-        }
-        dataProcessing {
-            20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-            20 {
-            table = tt_content
-            orderBy = sorting
-            where = colPos = 20
-            as = mainContent
+##############
+#### PAGE ####
+##############
+
+page = PAGE
+page {
+    
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                case = uppercamelcase
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
             }
+            ifEmpty = Default
+        }
+
+        templateRootPaths {
+            20 = EXT:ucph_layout_one_column/Resources/Private/Templates/Page/
+            # 21 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            20 = EXT:ucph_layout_one_column/Resources/Private/Partials/Page/
+            # 21 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            20 = EXT:ucph_layout_one_column/Resources/Private/Layouts/Page/
+            # 21 = {$page.fluidtemplate.layoutRootPath}
         }
     }
 }

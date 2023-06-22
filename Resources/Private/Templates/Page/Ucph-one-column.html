@@ -14,9 +14,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <f:for each="{mainContent}" as="contentElement">
-                            <f:cObject typoscriptObjectPath="tt_content.{contentElement.data.CType}" data="{contentElement.data}" table="tt_content" />
-                        </f:for>
+                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '20'}" />
                     </div>
                 </div>
             </div>
