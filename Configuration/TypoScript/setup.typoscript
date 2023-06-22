@@ -1,0 +1,23 @@
+# Default PAGE object:
+page = PAGE
+page.10 = FLUIDTEMPLATE
+page {
+    10 {
+        file.stdWrap.cObject = CASE
+        file.stdWrap.cObject {
+                key.data = pagelayout
+
+                default = TEXT
+                default.value = EXT:ucph_layout_one_column/Resources/Private/Templates/Ucph-one-column.html
+        }
+        dataProcessing {
+            20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            20 {
+            table = tt_content
+            orderBy = sorting
+            where = colPos = 20
+            as = mainContent
+            }
+        }
+    }
+}

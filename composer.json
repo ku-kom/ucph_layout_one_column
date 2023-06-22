@@ -1,0 +1,22 @@
+{
+    "name": "university-of-copenhagen/ucph_layout_one_column",
+    "type": "typo3-cms-extension",
+    "description": "UCPH TYPO3 backend layout one column. No left menu.",
+    "authors": [{
+        "name": "Nanna Ellegaard",
+        "role": "Developer"
+    }],
+    "homepage": "https://www.ku.dk/",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "autoload": {
+        "psr-4": {
+            "UniversityOfCopenhagen\\UcphLayoutOneColumn\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "ucph_layout_one_column"
+        }
+    }
+}

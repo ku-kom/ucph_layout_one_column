@@ -1,0 +1,30 @@
+#
+# BACKENDLAYOUT: UCPH page layout - one column full width. No left menu.
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            ucph-one-column {
+                icon = EXT:ucph_layout_one_column/Resources/Public/Icons/ucph_layout_one_column.svg
+                title = LLL:EXT:ucph_layout_one_column/Resources/Private/Language/locallang_be.xlf:ucph_layout_one_column_title
+                config {
+                    backend_layout {
+                        colCount = 12
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:ucph_layout_one_column/Resources/Private/Language/locallang_be.xlf:ucph_layout_one_column_center
+                                        colPos = 20
+                                        colspan = 12
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
