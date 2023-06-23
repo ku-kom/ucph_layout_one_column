@@ -1,5 +1,5 @@
 {
-    "name": "university-of-copenhagen/ucph_layout_one_column",
+    "name": "university-of-copenhagen/ucph-layout-one-column",
     "type": "typo3-cms-extension",
     "description": "UCPH TYPO3 backend layout one column. No left menu.",
     "authors": [{
