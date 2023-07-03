@@ -12,13 +12,7 @@
             </div>
         </f:if>
         <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '20'}" />
-                    </div>
-                </div>
-            </div>
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '20'}" />
         </section>
     </div>
 </f:section>
